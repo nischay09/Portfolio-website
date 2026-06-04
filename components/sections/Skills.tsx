@@ -9,62 +9,59 @@ const categories = [
     id: 'programming',
     label: 'Programming',
     skills: [
-      { name: 'C++', level: 75 },
-      { name: 'C', level: 70 },
-      { name: 'JavaScript', level: 80 },
-      { name: 'TypeScript', level: 65 },
+      { name: 'C++', level: 'Intermediate'
+
+       },
+      { name: 'C', level: 'Intermediate' },
+      { name: 'JavaScript', level: 'Basic' },
+      { name: 'TypeScript', level: 'Basic' },
     ],
   },
   {
     id: 'web',
     label: 'Web Development',
     skills: [
-      { name: 'HTML', level: 90 },
-      { name: 'CSS', level: 85 },
-      { name: 'React', level: 78 },
-      { name: 'Next.js', level: 72 },
-      { name: 'Tailwind CSS', level: 82 },
+      { name: 'HTML', level: 'Intermediate' },
+      { name: 'CSS', level: 'Intermediate' },
+      { name: 'React', level: 'Basic' },
+      { name: 'Next.js', level: 'Basic' },
+      { name: 'Tailwind CSS', level: 'Basic' },
     ],
   },
   {
     id: 'cs',
     label: 'CS Fundamentals',
     skills: [
-      { name: 'Data Structures', level: 70 },
-      { name: 'Algorithms', level: 68 },
-      { name: 'Object-Oriented Programming', level: 75 },
-      { name: 'Database Fundamentals', level: 65 },
+      { name: 'Data Structures', level: 'Intermediate' },
+      { name: 'Algorithms', level: 'Intermediate' },
+      { name: 'Object-Oriented Programming', level: 'Intermediate' },
+      { name: 'Database Fundamentals', level: 'Basic' },
     ],
   },
   {
     id: 'tools',
     label: 'Tools & Workflow',
     skills: [
-      { name: 'Git', level: 78 },
-      { name: 'GitHub', level: 80 },
-      { name: 'VS Code', level: 90 },
+      { name: 'Git', level: 'Intermediate' },
+      { name: 'GitHub', level: 'Intermediate' },
+      { name: 'VS Code', level: 'Intermediate' },
     ],
   },
 ]
 
-function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
+function SkillBar({ name, level }: { name: string; level: string }) {
+  const colors: Record<string, string> = {
+    'Basic': 'bg-fog dark:bg-[#2a2a2a] text-ash',
+    'Intermediate': 'bg-charcoal dark:bg-[#444] text-fog',
+    'Advanced': 'bg-ink dark:bg-fog text-paper dark:text-ink',
+  }
 
   return (
-    <div ref={ref} className="group">
-      <div className="flex items-center justify-between mb-1.5">
-        <span className="text-sm text-charcoal dark:text-[#ccc]">{name}</span>
-        <span className="text-xs font-mono text-ash">{level}%</span>
-      </div>
-      <div className="h-1 rounded-full bg-fog dark:bg-[#2a2a2a] overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : {}}
-          transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full bg-ink dark:bg-fog rounded-full"
-        />
-      </div>
+    <div className="flex items-center justify-between py-2.5 border-b border-mist dark:border-[#2a2a2a] last:border-0">
+      <span className="text-sm text-charcoal dark:text-[#ccc]">{name}</span>
+      <span className={`text-xs font-mono px-3 py-1 rounded-full ${colors[level] ?? 'bg-fog text-ash'}`}>
+        {level}
+      </span>
     </div>
   )
 }
@@ -146,8 +143,8 @@ export default function Skills() {
             </div>
 
             <div className="space-y-5">
-              {activeCategory.skills.map((skill, i) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={i * 0.07} />
+              {activeCategory.skills.map((skill) => (
+                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
               ))}
             </div>
 
