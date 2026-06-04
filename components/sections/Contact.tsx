@@ -15,13 +15,13 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: '/in/nischay-sharma',
-    href: 'https://linkedin.com/nischay-sharma-a35756378',
+    value: 'linkedin.com/in/nischaysharma09',
+    href: 'https://www.linkedin.com/in/nischaysharma09/',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: '/nischay-sharma',
+    value: 'github.com/nischay09',
     href: 'https://github.com/nischay09',
   },
   {

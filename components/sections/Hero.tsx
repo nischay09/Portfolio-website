@@ -152,9 +152,9 @@ export default function Hero() {
               <span className="text-xs text-ash uppercase tracking-widest font-mono">Find me on</span>
               <div className="flex gap-3">
                 {[
-                  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:nischay@example.com', label: 'Email' },
+                  { icon: Github, href: 'https://github.com/nischay09', label: 'GitHub' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/nischaysharma09/', label: 'LinkedIn' },
+                  { icon: Mail, href: 'mailto:sharmanischay2005@gmail.com', label: 'Email' },
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}
