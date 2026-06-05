@@ -14,9 +14,9 @@ function ResumePreview() {
         <h1 className="text-3xl font-bold tracking-tight">NISCHAY SHARMA</h1>
         <p className="text-base mt-1 text-gray-600">B.Tech Computer Science Engineering Student</p>
         <div className="flex flex-wrap gap-4 mt-2 text-xs text-gray-500">
-          <span>nischay@example.com</span>
-          <span>LinkedIn: /in/nischay-sharma</span>
-          <span>GitHub: /nischay-sharma</span>
+          <span>sharmanischay2005@gmail.com</span>
+          <span>LinkedIn: /in/nischay-sharma09</span>
+          <span>GitHub: /nischay09</span>
           <span>Kolkata, West Bengal, India</span>
         </div>
       </div>
@@ -110,7 +110,7 @@ function ResumeModal({ onClose }: { onClose: () => void }) {
             </div>
             <div className="flex items-center gap-2">
               <a
-                href="/resume.pdf"
+                href="/resume1.pdf"
                 download
                 className="flex items-center gap-1.5 px-3 py-1.5 text-xs bg-ink dark:bg-fog text-paper dark:text-ink rounded-lg hover:bg-charcoal dark:hover:bg-mist transition-all"
               >
@@ -217,7 +217,7 @@ export default function Resume() {
                   Preview Resume
                 </button>
                 <a
-                  href="/resume.pdf"
+                  href="/resume1.pdf"
                   download
                   className="flex items-center gap-2 px-5 py-2.5 bg-ink dark:bg-fog text-paper dark:text-ink text-sm rounded-lg hover:bg-charcoal dark:hover:bg-mist transition-all hover:scale-[1.02]"
                 >

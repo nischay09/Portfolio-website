@@ -131,7 +131,7 @@ export default function Hero() {
             {/* CTA buttons */}
             <motion.div variants={item} className="flex flex-wrap gap-3 mb-10">
               <a
-                href="/resume.pdf"
+                href="/resume1.pdf"
                 download
                 className="group flex items-center gap-2 px-5 py-2.5 bg-ink dark:bg-fog text-paper dark:text-ink text-sm font-medium rounded-lg hover:bg-charcoal dark:hover:bg-mist transition-all duration-200 hover:scale-[1.02]"
               >
