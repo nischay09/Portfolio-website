@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { Mail, Github, Linkedin, Send, CheckCircle, AlertCircle, MapPin, Clock } from 'lucide-react'
 import { SectionWrapper, SectionHeader, FadeIn } from '@/components/ui/SectionWrapper'
@@ -47,15 +48,28 @@ export default function Contact() {
   }
 
   const handleSubmit = async (e: React.MouseEvent) => {
-    e.preventDefault()
-    if (!form.name || !form.email || !form.message) return
-    setStatus('sending')
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1500))
+  e.preventDefault()
+  if (!form.name || !form.email || !form.message) return
+  setStatus('sending')
+  try {
+    await emailjs.send(
+      'service_bfnpbxt',
+      'template_8ismzsc',
+      {
+        from_name: form.name,
+        from_email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+      'Wddk5lWJz-n4qmtUS'
+    )
     setStatus('sent')
     setForm({ name: '', email: '', subject: '', message: '' })
     setTimeout(() => setStatus('idle'), 4000)
+  } catch {
+    setStatus('error')
   }
+}
 
   return (
     <SectionWrapper id="contact" className="bg-fog dark:bg-[#0d0d0d]">

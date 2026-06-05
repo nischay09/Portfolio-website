@@ -72,7 +72,7 @@ export default function Hero() {
     >
       {/* Subtle grid background */}
       <div
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06] pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
